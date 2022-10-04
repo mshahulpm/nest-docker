@@ -4,6 +4,10 @@ services:
    image: mongo 
    volumes:
      - ./mongo-data:/data/db
+  
+  nats:
+   image: nats 
+   
    
   nest_docker:
    image: nest_docker
