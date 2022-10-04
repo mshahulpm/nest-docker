@@ -1,4 +1,5 @@
 import { Controller, Get, Post } from '@nestjs/common';
+import { EventPattern, MessagePattern, Payload } from '@nestjs/microservices';
 import { AppService } from './app.service';
 
 @Controller()
@@ -19,4 +20,11 @@ export class AppController {
   createUser() {
     return this.appService.createUser()
   }
+
+  @MessagePattern('create-user')
+  async createUserByNats(@Payload() data: any) {
+    console.log('user-created', data)
+    this.appService.createUser()
+  }
+
 }
