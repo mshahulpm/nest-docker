@@ -7,7 +7,7 @@ services:
   
   nats:
    image: nats 
-   
+
    
   nest_docker:
    image: nest_docker
@@ -15,4 +15,5 @@ services:
      - 3700:3700
    depends_on:
      - mongodb
+     - nats 
   
