@@ -15,5 +15,12 @@ services:
      - 3700:3700
    depends_on:
      - mongodb
-     - nats
+     - nats 
+  
+  go-docker:
+   image: go-docker
+   ports:
+     - 3600:3600
+   depends_on:
+     - nats 
   
